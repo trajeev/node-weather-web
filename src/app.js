@@ -10,6 +10,8 @@ const viewspath = path.join(__dirname, '../template/views')
 const paritalspath = path.join(__dirname, '../template/partials')
 
 const app = express()
+const port = process.env.PORT || 3000
+
 app.use(express.static(publicDirectoryPath))
 
 //setup handlebar engine and view location
@@ -96,6 +98,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('node is up and running ')
+app.listen(port, () => {
+    console.log('node is up and running on ' + port)
 })
